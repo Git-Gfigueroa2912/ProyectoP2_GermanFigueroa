@@ -43,6 +43,36 @@ public class Principal extends javax.swing.JFrame {
         this.add(scrollCodigo, BorderLayout.EAST);
         
         this.revalidate();
+        
+        pnl_paleta.setLayout(new java.awt.GridLayout(8, 1, 0, 5));
+        pnl_paleta.setBackground(new Color(50, 50, 50));
+        pnl_paleta.setPreferredSize(new java.awt.Dimension(180,0));
+        
+        BotonFormaUML btnInicio = new BotonFormaUML("Inicio", "inicio");
+        BotonFormaUML btnIf = new BotonFormaUML("Si/No (If)", "if");
+        BotonFormaUML btnSout = new BotonFormaUML("Imprimir", "sout");
+        BotonFormaUML btnOperacion = new BotonFormaUML("Operacion", "operacion");
+        BotonFormaUML btnFor = new BotonFormaUML("Bucle (For)", "for");
+        BotonFormaUML btnWhile = new BotonFormaUML("Bucle (While)", "while");
+        BotonFormaUML btnFin = new BotonFormaUML("Fin", "fin");
+        
+        pnl_paleta.add(btnInicio);
+        pnl_paleta.add(btnOperacion);
+        pnl_paleta.add(btnIf);
+        pnl_paleta.add(btnFor);
+        pnl_paleta.add(btnWhile);
+        pnl_paleta.add(btnSout);
+        pnl_paleta.add(btnFin);
+        
+        this.add(pnl_paleta, BorderLayout.WEST);
+        
+        btnInicio.addActionListener(e -> {
+            FiguraUML f = new FiguraUML("Inicio", 50, 50);
+            lienzoPanel.add(f);
+            lienzoPanel.repaint();
+        });
+        this.revalidate();
+        this.repaint();
     }
 
     /**
@@ -55,18 +85,27 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        pnl_paleta = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnl_paleta.setMinimumSize(new java.awt.Dimension(180, 500));
+        pnl_paleta.setPreferredSize(new java.awt.Dimension(180, 500));
+        pnl_paleta.setLayout(new java.awt.GridLayout(8, 1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 671, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(pnl_paleta, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 418, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 533, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addComponent(pnl_paleta, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -110,5 +149,6 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel pnl_paleta;
     // End of variables declaration//GEN-END:variables
 }
