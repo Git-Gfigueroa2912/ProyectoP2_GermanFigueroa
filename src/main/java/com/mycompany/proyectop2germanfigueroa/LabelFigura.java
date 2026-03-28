@@ -1,6 +1,6 @@
 package com.mycompany.proyectop2germanfigueroa;
 
-import com.proyectop2.gui.Ventana;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Point;

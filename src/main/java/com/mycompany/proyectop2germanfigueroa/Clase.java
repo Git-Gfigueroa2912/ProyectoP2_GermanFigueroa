@@ -3,20 +3,21 @@ package com.mycompany.proyectop2germanfigueroa;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
 public class Clase implements Serializable {
 
     private String nombre;
     private Clase padre;
     private String descripcion;
     private ArrayList<Variable> propiedades;
-    // private ArrayList<Metodo> metodos;
+    private ArrayList<Metodo> metodos = new ArrayList<>();
 
     public Clase(String nombre) {
 	this.nombre = nombre;
 	this.padre = null;
 	this.descripcion = "";
 	this.propiedades = new ArrayList();
-	// this.metodos = new ArrayList();
+	this.metodos = new ArrayList();
     }
 
     public String getNombre() {
@@ -51,6 +52,9 @@ public class Clase implements Serializable {
 
     public void setPropiedades(ArrayList<Variable> propiedades) {
 	this.propiedades = propiedades;
+    }
+    public ArrayList<Metodo> getMetodos(){
+        return metodos;
     }
 
     public String obtenerCodigo() {
